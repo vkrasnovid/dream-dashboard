@@ -1,123 +1,189 @@
-# QA Report — Dream Team Dashboard
-**File:** `index.html` (1060 lines)
+# QA Report — Dream Team Dashboard (`index.html`)
+
+**Reviewer:** QA Tester
 **Date:** 2026-03-20
-**Reviewer:** QA Tester Agent
+**File:** `index.html` (1060 lines)
+**Scope:** Static single-file dashboard — HTML, CSS, inline JSON data, vanilla JS
+
+---
+
+## Severity Legend
+
+| Level | Meaning |
+|-------|---------|
+| 🔴 HIGH | Visible defect or broken feature in production |
+| 🟡 MEDIUM | Degraded UX, edge-case failure, or missing resilience |
+| 🔵 LOW | Minor inconsistency, style/maintenance issue |
+| ⚪ INFO | Observation only, no action required |
 
 ---
 
 ## Summary
 
-| Severity | Count |
-|----------|-------|
-| HIGH     | 1     |
-| MEDIUM   | 4     |
-| LOW      | 7     |
-| INFO     | 3     |
-
-Overall the dashboard is well-structured with clean CSS variable usage, solid responsive breakpoints, and a working JS rendering pipeline. One high-severity icon bug and several medium/low polish issues were found.
-
----
-
-## HIGH Severity
-
-### H-1 · Broken icon for "review" activity type
-**Location:** `index.html:943`, `renderFeed()` icon map
-**Description:** `fa-magnifying-glass-chart` is a **FontAwesome Pro** icon and does not exist in FA Free 6.5 (the CDN loaded on line 10). All activity items of type `review` will render an empty icon box.
-**Impact:** Three of the 15 feed items have type `review` and will show broken/empty icons visually.
-**Reproduction:** Load the page, observe the Activity section — review rows show an empty circle icon placeholder.
-**Fix:** Replace `fa-magnifying-glass-chart` with a free-tier icon, e.g. `fa-magnifying-glass` or `fa-code-pull-request`.
+| Section | Status |
+|---------|--------|
+| Header | ✅ Pass |
+| Sidebar / Navigation | ✅ Pass (1 medium caveat) |
+| Stats Banner + Animated Counters | ✅ Pass |
+| Project Cards + Pipeline | ✅ Pass |
+| Agent Roster | ✅ Pass |
+| Activity Feed | 🔴 1 HIGH, 1 MEDIUM |
+| Responsive Design (320px–1920px) | 🟡 1 MEDIUM |
+| Dark Theme Consistency | 🔵 2 LOW |
+| Animations + Hover Effects | 🟡 1 MEDIUM |
+| JS Data Loading | 🟡 1 MEDIUM |
+| Accessibility | 🔵 1 LOW |
+| Console / Runtime Errors | 🔴 1 HIGH |
 
 ---
 
-## MEDIUM Severity
+## Issues
 
-### M-1 · Stats section missing `<h2>` heading
-**Location:** `index.html:723–727`
-**Description:** The Stats section renders the grid directly with no section heading `<h2>`, unlike the Projects, Agents, and Activity sections which all have a visible `<h2 class="section-heading">`. The stats area appears to float without a label.
-**Impact:** Visual inconsistency; also poor accessibility (screen readers skip the landmark).
-**Fix:** Add `<h2 class="section-heading"><i class="fa-solid fa-chart-bar"></i> Статистика / Stats</h2>` before the grid.
+### 🔴 HIGH — Broken Icon: `fa-magnifying-glass-chart` (Pro-only)
 
-### M-2 · Nav active-highlight threshold too aggressive for short sections
-**Location:** `index.html:1008–1016`, `initNavHighlight()`
-**Description:** The IntersectionObserver uses `threshold: 0.4`, meaning 40% of a section must be visible before the nav link activates. For the Stats section (which is relatively compact — just four cards), scrolling down slightly may not trigger the threshold, leaving the wrong nav link active.
-**Impact:** Active nav indicator can appear desynced from content on smaller viewports or fast scrolls.
-**Fix:** Reduce threshold to `0.15–0.2` and/or add a `rootMargin` offset to catch sections earlier.
-
-### M-3 · `innerHTML` injection with unsanitized data
-**Location:** `index.html:841–846`, `857–892`, `908–929`, `952–963`
-**Description:** All four render functions inject data (commit messages, agent tasks, activity messages) directly via `innerHTML` with no sanitization. The current data is static/embedded so there is no live XSS vector, but if this pattern is reused with API-fetched data, it becomes a critical security hole.
-**Impact:** No current exploitability given static embedded JSON. High risk if data source ever becomes dynamic.
-**Fix:** Use `textContent` for text-only fields, or sanitize strings before insertion.
-
-### M-4 · Sidebar has no backdrop overlay on mobile
-**Location:** `index.html:490–503` (CSS), `1037–1046` (`initHamburger`)
-**Description:** On mobile (≤900px), the sidebar slides in over the content but there is no dim backdrop behind it. Clicking outside works via the `document.click` handler, but there is no visual affordance that the rest of the UI is blocked. The UX pattern is common but the lack of backdrop makes the sidebar feel detached.
-**Impact:** Usability friction on mobile — users may not realize they can dismiss by tapping outside.
-**Fix:** Add a `<div class="sidebar-overlay">` that fades in when sidebar is open, and hide it when sidebar closes.
+**Location:** `index.html:943` (typeIcon map), rendered in `renderFeed()` at line 955
+**What happens:** The `review` activity type maps to `fa-magnifying-glass-chart`, which is a **FontAwesome Pro** icon. The page loads `font-awesome 6.5.0` **Free** from cdnjs. This icon does not exist in FA6 Free — every "review" feed row renders an empty placeholder box instead of an icon.
+**Affected items:** 3 of 15 activity feed rows (act-03, act-08, act-14).
+**Fix:** Replace with a free alternative such as `fa-code-pull-request` or `fa-eye`.
 
 ---
 
-## LOW Severity
+### 🔴 HIGH — Activity Feed Not Sorted by Timestamp
 
-### L-1 · Debug `console.log` statements in production code
-**Location:** `index.html:776`, `814`, `838`, `899`, `935`, `965`
-**Description:** Six `console.log` calls with `[init]`, `[stats]`, `[projects]`, `[agents]`, `[activity]` prefixes are present. These are helpful during development but should be stripped or guarded behind a debug flag for production.
-
-### L-2 · Hardcoded color in pipeline tooltip
-**Location:** `index.html:275`
-**Description:** `.stage-pill .tooltip` uses `background: #0f172a` (hardcoded hex) instead of `var(--bg)`. This is the only place a raw hex is used for a semantic background color, breaking the theme variable contract.
-
-### L-3 · Half-star rendering logic is dead code
-**Location:** `index.html:802–803`, `renderStars()`
-**Description:** The condition `i - 0.5 <= trustLevel` (half-star) can never be true when `trustLevel` is always an integer (3, 4, or 5 from the data). The half-star branch will never execute.
-**Impact:** Dead code adds cognitive overhead; no visual bug.
-
-### L-4 · Missing `rel="noreferrer"` on GitHub links
-**Location:** `index.html:873`
-**Description:** External links use `rel="noopener"` but omit `noreferrer`. While `noopener` prevents `window.opener` hijacking, adding `noreferrer` also suppresses the `Referer` header, a minor privacy/security best practice for outbound links.
-
-### L-5 · Status dot color semantics: `idle` = green
-**Location:** `index.html:401`
-**Description:** `.status-dot.idle { background: var(--green); }`. Green conventionally signals "active/working". Idle agents showing green may confuse users expecting green = busy. The `working` state (yellow) and `error` state (red) are appropriate.
-**Suggestion:** Use a neutral grey or dim color for idle agents.
-
-### L-6 · `relativeTime()` breaks for future dates
-**Location:** `index.html:779–787`
-**Description:** `relativeTime()` computes `diff = Date.now() - date`. If a timestamp is in the future, `diff` is negative, producing output like `-1m ago`. No current data triggers this but the function has no guard.
-
-### L-7 · Mixed-language UI labels may cause layout overflow on narrow screens
-**Location:** `index.html:704–715` (sidebar), `731–756` (section headings)
-**Description:** Bilingual labels like `"Активность / Activity"` and `"Агенты / Agents"` are significantly wider than English-only equivalents. On 320px mobile the sidebar nav links and section headings are not tested to confirm they don't overflow or wrap awkwardly.
-**Test needed:** Manual check at 320×568px viewport.
+**Location:** `index.html:671–689` (data-activity JSON), `renderFeed()` at line 946
+**What happens:** Activity items are rendered in JSON insertion order, not newest-first. Within March 18, items appear oldest-to-newest (09:00 → 11:30 → 14:20 → 17:00) while the overall list is newest-first. Additionally, `act-13` (2026-03-20T07:30) is positioned at index 12, appearing after all March 18 items even though it is a March 20 entry. A real-time dashboard presenting unsorted events is actively misleading.
+**Fix:** Sort before rendering: `activity.slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))`.
 
 ---
 
-## INFO
+### 🟡 MEDIUM — Feed Row Hover Transition Defined but No Hover Style
 
-### I-1 · Section reveal animation fires on page load for #stats
-**Location:** `index.html:723`, `989–1001`
-**Description:** The `#stats` section has `class="section visible"` hardcoded in HTML (pre-visible), but `initSectionObserver()` also observes it. The observer will immediately fire (since it's already in view) and call `observer.unobserve()`. Functionally harmless but redundant.
-
-### I-2 · Activity feed not announced to assistive technology on filter change
-**Location:** `index.html:978–984`
-**Description:** When a filter button is clicked and `renderFeed()` re-renders the list, screen readers receive no notification of the content change. Adding `aria-live="polite"` to `#activity-feed` would resolve this.
-
-### I-3 · `fa-code-commit` availability in FA Free
-**Location:** `index.html:940`
-**Description:** `fa-code-commit` is used for commit-type activity icons. This icon exists in FA 6 Free Solid, so it should render correctly. Verified no issue, noted for completeness.
+**Location:** `index.html:450` (`.feed-row` CSS)
+**What happens:** `.feed-row` declares `transition: background 100ms ease` but no `:hover { background: ... }` rule exists. The transition fires on nothing; the hover effect is silently non-functional.
+**Fix:** Add `.feed-row:hover { background: var(--surface-alt); }`.
 
 ---
 
-## Test Coverage by Checklist Item
+### 🟡 MEDIUM — No Error Handling Around `JSON.parse` Calls
 
-| # | Criterion                              | Result   | Notes                         |
-|---|----------------------------------------|----------|-------------------------------|
-| 1 | All sections render                    | ✅ PASS  | All 4 sections render via JS  |
-| 2 | Sidebar navigation / scroll            | ✅ PASS  | Works; threshold issue (M-2)  |
-| 3 | Pipeline progress bars                 | ✅ PASS  | Pills + % label + tooltips    |
-| 4 | Agent cards correct data               | ✅ PASS  | IDs, roles, models, stars     |
-| 5 | Activity feed icons + timestamps       | ⚠️ FAIL  | Review icon broken (H-1)      |
-| 6 | Stats counters animate                 | ✅ PASS  | rAF cubic easing, 1200ms      |
-| 7 | Responsive 320px+ / tablet / desktop   | ✅ PASS  | Breakpoints at 900px + 600px  |
-| 8 | No console errors                      | ✅ PASS  | Logs present but not errors   |
-| 9 | Dark theme consistent                  | ⚠️ WARN  | One hardcoded hex (L-2)       |
+**Location:** `index.html:772–774`
+**What happens:** All three `JSON.parse()` calls are at the top level with no try-catch. If any embedded JSON is malformed (e.g., from a future edit), a SyntaxError propagates and the entire `DOMContentLoaded` bootstrap is skipped — the page renders as blank content with no user-facing feedback.
+**Fix:** Wrap each parse in try-catch with a fallback value and an error banner.
+
+---
+
+### 🟡 MEDIUM — No Max-Width on Main Content (1920px+)
+
+**Location:** `index.html:126–131` (`.main` CSS)
+**What happens:** `.main` has `flex: 1` with no `max-width`. On 1920px monitors, the `auto-fill minmax(320px, 1fr)` grids create very few but extremely wide cards, breaking visual hierarchy and readability.
+**Fix:** Add `max-width: 1400px; margin: 0 auto;` to `.main`, or wrap content in a constrained container.
+
+---
+
+### 🟡 MEDIUM — External CDN Dependencies with No Fallbacks
+
+**Location:** `index.html:7–10`
+**What happens:** The page relies on two external CDNs at render time — Google Fonts (`fonts.googleapis.com`) and FontAwesome (`cdnjs.cloudflare.com`). If either is unavailable (network offline, CDN outage, corporate firewall), the UI degrades: layout font falls back to system sans-serif and all icons render as empty squares. Icons are load-bearing for status indicators and activity type display.
+**Fix:** Host FA locally or add a JS fallback detector; add a system-font stack fallback in the font-family declaration.
+
+---
+
+### 🟡 MEDIUM — Nav Active Highlight Gap When Scrolling Between Sections
+
+**Location:** `index.html:1008` (`initNavHighlight`, `threshold: 0.4`)
+**What happens:** The IntersectionObserver uses `threshold: 0.4`. If the user scrolls to a position where no single section occupies 40% of the viewport (e.g., between Projects and Agents when both are partially visible), all nav links lose their `active` class simultaneously.
+**Fix:** Use `threshold: 0.1` or maintain the last active item until a new section crosses the threshold.
+
+---
+
+### 🔵 LOW — No `<noscript>` Fallback
+
+**Location:** `index.html:720–765` (all section content divs are empty shell containers)
+**What happens:** Every section container (`#stats-grid`, `#projects-grid`, `#agents-grid`, `#activity-feed`) is populated entirely by JavaScript. With JS disabled, the page displays only the header and sidebar shell with zero content and no explanatory message.
+**Fix:** Add a `<noscript>` tag with a brief notice.
+
+---
+
+### 🔵 LOW — Hardcoded Color in Tooltip Instead of CSS Variable
+
+**Location:** `index.html:276`
+**What happens:** `.stage-pill .tooltip` uses `background: #0f172a` (hardcoded hex). This matches `--bg` today but will silently drift if the theme variable is ever updated.
+**Fix:** Replace with `background: var(--bg)`.
+
+---
+
+### 🔵 LOW — Inline Style for Error Task Text Instead of CSS Class
+
+**Location:** `index.html:912`
+**What happens:** The error-state agent task uses `style="color:var(--red)"` inline, while all other state variants rely on class-based styling. This inconsistency complicates theming overrides and is the only inline style in the component markup.
+**Fix:** Add `.agent-task.error { color: var(--red); }` and apply as a class.
+
+---
+
+### 🔵 LOW — Missing `aria-current` on Active Nav Link
+
+**Location:** `index.html:705–716` (sidebar nav links), `initNavHighlight()` at line 1011
+**What happens:** The active nav link has class `active` for visual styling but no `aria-current` attribute. The dynamic active state is toggled without updating ARIA attributes, making the current section invisible to screen readers.
+**Fix:** Set `aria-current="true"` when adding the `active` class and remove it from all others.
+
+---
+
+### ⚪ INFO — Console.log Statements in Production Code
+
+**Location:** Lines 776, 814, 838, 899, 935, 965
+**What happens:** Six `console.log` calls log initialization details, counter targets, and render counts. Values are descriptive and non-sensitive. No runtime errors are expected from normal operation — the debug output is clean and intentional.
+**Note:** Consider gating behind a `const DEBUG = false` flag for production builds.
+
+---
+
+### ⚪ INFO — Bilingual Labels in Sidebar
+
+**Location:** `index.html:704–716`
+**What happens:** Nav labels use Russian/English format (`Агенты / Agents`). Functional and presumably intentional for an international team. Labels fit within the 240px sidebar width without truncation.
+
+---
+
+## Checklist Results
+
+| Test Area | Result | Notes |
+|-----------|--------|-------|
+| Header renders (sticky, title, hamburger) | ✅ Pass | Hamburger hidden on desktop, shown ≤900px |
+| Sidebar renders with 4 nav sections | ✅ Pass | |
+| Project cards (5) render with all fields | ✅ Pass | Name, description, badge, GitHub link, pipeline, last commit, stats |
+| Agent roster (5) renders | ✅ Pass | Avatar, ID, role, model badge, stars, status dot, task |
+| Activity feed renders | ⚠️ Partial | 3 review-type rows show broken icon (Pro icon) |
+| Stats banner renders 4 counters | ✅ Pass | Projects, LOC, Commits, Active Agents |
+| Pipeline progress bars display (6 stages) | ✅ Pass | Done stages in accent color, greyed otherwise |
+| Pipeline stage tooltips on hover | ✅ Pass | |
+| Pipeline percentage label | ✅ Pass | Calculated correctly from JSON |
+| Responsive 320px | ✅ Pass | 1-col layout, 12px side padding |
+| Responsive 600px | ✅ Pass | 2-col stats, 1-col cards/agents |
+| Responsive 900px | ✅ Pass | Off-canvas sidebar, hamburger appears |
+| Responsive 1920px | 🟡 Degraded | No max-width — cards stretch excessively |
+| Hamburger toggle opens/closes sidebar | ✅ Pass | |
+| Click outside closes sidebar (mobile) | ✅ Pass | |
+| Sidebar closes on nav link click (mobile) | ✅ Pass | |
+| Smooth scroll on nav click | ✅ Pass | `scrollIntoView({ behavior: 'smooth' })` |
+| Active nav highlight on scroll | 🟡 Partial | Threshold gap possible between sections |
+| Animated counters (eased, formatted) | ✅ Pass | rAF + cubic ease-out, `toLocaleString()` |
+| Counters run on page load | ✅ Pass | Stats section starts with `.visible` class |
+| Inline JSON parsed correctly | ✅ Pass | 5 projects, 5 agents, 15 activity items |
+| JSON parse error handling | 🟡 Missing | No try-catch |
+| Activity filter buttons render | ✅ Pass | "All Projects" + 5 project filters |
+| Activity filter active state toggles | ✅ Pass | |
+| Activity feed re-renders on filter | ✅ Pass | |
+| Activity feed sorted newest-first | 🔴 Fail | Insertion order; within-day items go oldest-first |
+| No console errors (runtime) | ✅ Pass | No runtime errors; broken icon fails silently |
+| Project card hover shadow | ✅ Pass | |
+| Agent card hover shadow | ✅ Pass | |
+| Nav link hover bg + color transition | ✅ Pass | |
+| Filter button hover | ✅ Pass | |
+| Pipeline pill tooltip hover | ✅ Pass | |
+| Feed row hover background | 🔴 Fail | Transition declared, no hover rule — effect is dead |
+| Section fade-in (scroll reveal) | ✅ Pass | IntersectionObserver at 8% threshold |
+| Project/agent card stagger animation | ✅ Pass | 80ms delay per card |
+| Activity feed-in animation with stagger | ✅ Pass | 40ms stagger per row |
+| Dark theme color variables consistent | 🟡 Mostly | 1 hardcoded hex, 1 inline style |
+| Background / surface / border hierarchy | ✅ Pass | `--bg` → `--surface` → `--surface-alt` correctly layered |
+| Accent color on icons, active states, badges | ✅ Pass | |
+| Status dot colors (green/yellow/red) | ✅ Pass | |

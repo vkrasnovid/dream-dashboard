@@ -721,6 +721,9 @@
 
     <!-- Stats Section -->
     <section class="section visible" id="stats">
+      <h2 class="section-heading">
+        <i class="fa-solid fa-chart-bar"></i> Статистика / Stats
+      </h2>
       <div class="stats-grid" id="stats-grid">
         <!-- Rendered by JS -->
       </div>
@@ -786,6 +789,10 @@ function relativeTime(isoDate) {
   return `${days}d ago`;
 }
 
+function esc(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 function truncate(str, len) {
   return str.length > len ? str.slice(0, len) + '…' : str;
 }
@@ -841,7 +848,7 @@ function renderStats() {
   grid.innerHTML = statsData.map(s => `
     <div class="stat-card">
       <div class="stat-value" data-target="${s.value}">0</div>
-      <div class="stat-label">${s.label}</div>
+      <div class="stat-label">${esc(s.label)}</div>
     </div>
   `).join('');
 
@@ -866,7 +873,7 @@ function renderProjects() {
       <article class="project-card">
         <div class="card-header">
           <div>
-            <div class="card-title">${p.name}</div>
+            <div class="card-title">${esc(p.name)}</div>
           </div>
           <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
             <span class="badge badge-${p.status}">${p.status === 'active' ? 'Active' : 'Completed'}</span>
@@ -875,7 +882,7 @@ function renderProjects() {
             </a>
           </div>
         </div>
-        <p class="card-desc">${p.description}</p>
+        <p class="card-desc">${esc(p.description)}</p>
         <div class="pipeline-label">
           <span>Pipeline</span>
           <span>${donePct}%</span>
@@ -940,7 +947,7 @@ const typeIcon = {
   commit: 'fa-code-commit',
   test:   'fa-vial',
   deploy: 'fa-rocket',
-  review: 'fa-magnifying-glass-chart',
+  review: 'fa-magnifying-glass',
 };
 
 function renderFeed(project) {
@@ -1013,7 +1020,7 @@ function initNavHighlight() {
         if (activeLink) activeLink.classList.add('active');
       }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.2 });
 
   sections.forEach(id => {
     const el = document.getElementById(id);
