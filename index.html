@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -183,7 +183,7 @@
     /* ── Cards Grid ── */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
       gap: 20px;
     }
 
@@ -274,7 +274,7 @@
       bottom: 12px;
       left: 50%;
       transform: translateX(-50%);
-      background: #0f172a;
+      background: var(--bg);
       color: var(--text);
       font-size: 0.7rem;
       padding: 3px 8px;
@@ -513,18 +513,19 @@
     }
 
     .sidebar-overlay {
-      display: none;
+      display: block;
       position: fixed;
       inset: 0;
       top: var(--header-height);
       background: rgba(0,0,0,0.5);
       z-index: 199;
       opacity: 0;
+      pointer-events: none;
       transition: opacity 0.25s ease;
     }
     .sidebar-overlay.visible {
-      display: block;
       opacity: 1;
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -792,6 +793,8 @@
 <script>
 'use strict';
 
+const DEBUG = location.search.includes('debug');
+
 // ── Data Parsing ──────────────────────────────────────────────
 let projects, agents, activity;
 try { projects = JSON.parse(document.getElementById('data-projects').textContent); }
@@ -801,11 +804,12 @@ catch (e) { console.error('[FIX] JSON.parse failed for data-agents', e);   agent
 try { activity = JSON.parse(document.getElementById('data-activity').textContent); }
 catch (e) { console.error('[FIX] JSON.parse failed for data-activity', e); activity = []; }
 
-console.log('[init] data loaded', { projects: projects.length, agents: agents.length, activity: activity.length });
+if (DEBUG) console.log('[init] data loaded', { projects: projects.length, agents: agents.length, activity: activity.length });
 
 // ── Helpers ───────────────────────────────────────────────────
 function relativeTime(isoDate) {
   const diff = Date.now() - new Date(isoDate).getTime();
+  if (diff < 0) return 'just now';
   const mins  = Math.floor(diff / 60000);
   const hours = Math.floor(diff / 3600000);
   const days  = Math.floor(diff / 86400000);
@@ -843,7 +847,7 @@ function renderStars(trustLevel) {
 
 // ── Stats Counters ────────────────────────────────────────────
 function animateCounter(el, target, duration) {
-  console.log('[stats] animating counter', { target, duration });
+  if (DEBUG) console.log('[stats] animating counter', { target, duration });
   const start = performance.now();
   function step(now) {
     const elapsed = now - start;
@@ -867,7 +871,7 @@ function renderStats() {
     { label: 'Активных агентов / Active Agents', value: activeAgents },
   ];
 
-  console.log('[stats] counters started', { projects: projects.length, loc: totalLoc, commits: totalCommits, activeAgents });
+  if (DEBUG) console.log('[stats] counters started', { projects: projects.length, loc: totalLoc, commits: totalCommits, activeAgents });
 
   const grid = document.getElementById('stats-grid');
   grid.innerHTML = statsData.map(s => `
@@ -928,7 +932,7 @@ function renderProjects() {
     setTimeout(() => card.classList.add('visible'), i * 80);
   });
 
-  console.log('[projects] rendered', projects.length, 'cards');
+  if (DEBUG) console.log('[projects] rendered', projects.length, 'cards');
 }
 
 // ── Agents ────────────────────────────────────────────────────
@@ -964,7 +968,7 @@ function renderAgents() {
     setTimeout(() => card.classList.add('visible'), i * 80);
   });
 
-  console.log('[agents] rendered', agents.length, 'cards');
+  if (DEBUG) console.log('[agents] rendered', agents.length, 'cards');
 }
 
 // ── Activity Feed ─────────────────────────────────────────────
@@ -995,7 +999,7 @@ function renderFeed(project) {
     </div>
   `).join('');
 
-  console.log('[activity] filter changed', { project, visible: filtered.length });
+  if (DEBUG) console.log('[activity] filter changed', { project, visible: filtered.length });
 }
 
 function renderActivityFilters() {
@@ -1040,12 +1044,18 @@ function initNavHighlight() {
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        const activeLink = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
-        if (activeLink) activeLink.classList.add('active');
-      }
+      entry.target.dataset.visible = entry.isIntersecting ? '1' : '0';
     });
+    // Always pick the topmost visible section to avoid flicker when two overlap
+    const active = sections
+      .map(id => document.getElementById(id))
+      .filter(el => el?.dataset.visible === '1')
+      .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)[0];
+    if (active) {
+      links.forEach(l => l.classList.remove('active'));
+      const activeLink = document.querySelector(`.nav-link[data-section="${active.id}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
   }, { threshold: 0.1 });
 
   sections.forEach(id => {
