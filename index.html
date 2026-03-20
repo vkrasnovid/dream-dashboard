@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --bg: #0f172a;
@@ -709,7 +709,7 @@
 
 <!-- ── Header ── -->
 <header class="header">
-  <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">
+  <button class="hamburger" id="hamburger" aria-label="Toggle sidebar" aria-expanded="false">
     <i class="fa-solid fa-bars"></i>
   </button>
   <h1><span>Dream</span> Team Dashboard</h1>
@@ -822,6 +822,10 @@ function esc(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function safeHref(url) {
+  return /^https?:\/\//.test(url) ? esc(url) : '#';
+}
+
 function truncate(str, len) {
   return str.length > len ? str.slice(0, len) + '…' : str;
 }
@@ -891,7 +895,7 @@ function renderProjects() {
   const grid = document.getElementById('projects-grid');
 
   grid.innerHTML = projects.map(p => {
-    const donePct = Math.round((p.pipeline.filter(s => s.done).length / p.pipeline.length) * 100);
+    const donePct = p.pipeline.length ? Math.round((p.pipeline.filter(s => s.done).length / p.pipeline.length) * 100) : 0;
     const stageHtml = p.pipeline.map(s =>
       `<div class="stage-pill${s.done ? ' done' : ''}">
          <span class="tooltip">${s.name}</span>
@@ -905,8 +909,8 @@ function renderProjects() {
             <div class="card-title">${esc(p.name)}</div>
           </div>
           <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
-            <span class="badge badge-${p.status}">${p.status === 'active' ? 'Active' : 'Completed'}</span>
-            <a class="github-link" href="${p.github_url}" target="_blank" rel="noopener" title="GitHub">
+            <span class="badge badge-${esc(p.status)}">${p.status === 'active' ? 'Active' : 'Completed'}</span>
+            <a class="github-link" href="${safeHref(p.github_url)}" target="_blank" rel="noopener" title="GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -956,7 +960,7 @@ function renderAgents() {
         <div class="agent-model">${esc(a.model)}</div>
         ${renderStars(a.trust_level)}
         <div class="status-row">
-          <div class="status-dot ${a.status}"></div>
+          <div class="status-dot ${esc(a.status)}"></div>
           <span class="status-text">Статус / Status: ${statusLabel[a.status]}</span>
         </div>
         ${taskHtml}
@@ -1085,11 +1089,13 @@ function initHamburger() {
   function closeSidebar() {
     sidebar.classList.remove('open');
     overlay.classList.remove('visible');
+    btn.setAttribute('aria-expanded', 'false');
   }
 
   btn.addEventListener('click', () => {
     const isOpen = sidebar.classList.toggle('open');
     overlay.classList.toggle('visible', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
   });
 
   overlay.addEventListener('click', closeSidebar);
