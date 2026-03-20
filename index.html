@@ -127,6 +127,8 @@
       flex: 1;
       padding: 32px;
       overflow-x: hidden;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     /* ── Section ── */
@@ -452,6 +454,7 @@
       transform: translateX(-10px);
       animation: feedIn 0.3s ease forwards;
     }
+    .feed-row:hover { background: var(--surface-alt); }
     @keyframes feedIn {
       to { opacity: 1; transform: translateX(0); }
     }
@@ -507,6 +510,21 @@
       .cards-grid { grid-template-columns: 1fr; }
       .agent-cards-grid { grid-template-columns: 1fr; }
       .main { padding: 16px 12px; }
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: var(--header-height);
+      background: rgba(0,0,0,0.5);
+      z-index: 199;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .sidebar-overlay.visible {
+      display: block;
+      opacity: 1;
     }
   </style>
 </head>
@@ -699,6 +717,9 @@
 <!-- ── Layout ── -->
 <div class="layout">
 
+  <!-- ── Sidebar Overlay (mobile) ── -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
   <!-- ── Sidebar ── -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-label">Навигация / Nav</div>
@@ -772,9 +793,13 @@
 'use strict';
 
 // ── Data Parsing ──────────────────────────────────────────────
-const projects = JSON.parse(document.getElementById('data-projects').textContent);
-const agents   = JSON.parse(document.getElementById('data-agents').textContent);
-const activity = JSON.parse(document.getElementById('data-activity').textContent);
+let projects, agents, activity;
+try { projects = JSON.parse(document.getElementById('data-projects').textContent); }
+catch (e) { console.error('[FIX] JSON.parse failed for data-projects', e); projects = []; }
+try { agents   = JSON.parse(document.getElementById('data-agents').textContent); }
+catch (e) { console.error('[FIX] JSON.parse failed for data-agents', e);   agents   = []; }
+try { activity = JSON.parse(document.getElementById('data-activity').textContent); }
+catch (e) { console.error('[FIX] JSON.parse failed for data-activity', e); activity = []; }
 
 console.log('[init] data loaded', { projects: projects.length, agents: agents.length, activity: activity.length });
 
@@ -890,8 +915,8 @@ function renderProjects() {
         <div class="pipeline-stages">${stageHtml}</div>
         <div class="last-commit">
           <div class="last-commit-label">Последний коммит / Last Commit</div>
-          <div class="last-commit-msg">${truncate(p.last_commit.message, 60)}</div>
-          <div class="last-commit-meta">${relativeTime(p.last_commit.date)} · ${p.last_commit.author}</div>
+          <div class="last-commit-msg">${esc(truncate(p.last_commit.message, 60))}</div>
+          <div class="last-commit-meta">${relativeTime(p.last_commit.date)} · ${esc(p.last_commit.author)}</div>
         </div>
         <div class="card-stats">${p.stats.files} files · ${p.stats.loc.toLocaleString()} LOC</div>
       </article>
@@ -914,17 +939,17 @@ function renderAgents() {
 
   grid.innerHTML = agents.map(a => {
     const taskHtml = a.status === 'working'
-      ? `<div class="agent-task">${a.current_task}</div>`
+      ? `<div class="agent-task">${esc(a.current_task)}</div>`
       : a.status === 'error'
-        ? `<div class="agent-task" style="color:var(--red)">${a.current_task}</div>`
+        ? `<div class="agent-task" style="color:var(--red)">${esc(a.current_task)}</div>`
         : `<div class="agent-task">— нет активных задач</div>`;
 
     return `
       <article class="agent-card">
-        <div class="agent-avatar">${initials(a.role)}</div>
-        <div class="agent-id">${a.id}</div>
-        <div class="agent-role">${a.role}</div>
-        <div class="agent-model">${a.model}</div>
+        <div class="agent-avatar">${esc(initials(a.role))}</div>
+        <div class="agent-id">${esc(a.id)}</div>
+        <div class="agent-role">${esc(a.role)}</div>
+        <div class="agent-model">${esc(a.model)}</div>
         ${renderStars(a.trust_level)}
         <div class="status-row">
           <div class="status-dot ${a.status}"></div>
@@ -947,13 +972,14 @@ const typeIcon = {
   commit: 'fa-code-commit',
   test:   'fa-vial',
   deploy: 'fa-rocket',
-  review: 'fa-magnifying-glass',
+  review: 'fa-eye',
 };
 
 function renderFeed(project) {
-  const filtered = project === 'all'
+  const filtered = (project === 'all'
     ? activity
-    : activity.filter(a => a.project === project);
+    : activity.filter(a => a.project === project))
+    .slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
   const feed = document.getElementById('activity-feed');
   feed.innerHTML = filtered.map((item, i) => `
@@ -962,8 +988,8 @@ function renderFeed(project) {
         <i class="fa-solid ${typeIcon[item.type] || 'fa-circle-dot'}"></i>
       </div>
       <div class="feed-body">
-        <div class="feed-msg">${item.message}</div>
-        <div class="feed-author">${item.project} · ${item.author}</div>
+        <div class="feed-msg">${esc(item.message)}</div>
+        <div class="feed-author">${esc(item.project)} · ${esc(item.author)}</div>
       </div>
       <div class="feed-time">${relativeTime(item.timestamp)}</div>
     </div>
@@ -1020,7 +1046,7 @@ function initNavHighlight() {
         if (activeLink) activeLink.classList.add('active');
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
 
   sections.forEach(id => {
     const el = document.getElementById(id);
@@ -1044,10 +1070,23 @@ function initNavHighlight() {
 function initHamburger() {
   const btn = document.getElementById('hamburger');
   const sidebar = document.getElementById('sidebar');
-  btn.addEventListener('click', () => sidebar.classList.toggle('open'));
+  const overlay = document.getElementById('sidebar-overlay');
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('visible');
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    overlay.classList.toggle('visible', isOpen);
+  });
+
+  overlay.addEventListener('click', closeSidebar);
+
   document.addEventListener('click', e => {
-    if (!sidebar.contains(e.target) && !btn.contains(e.target)) {
-      sidebar.classList.remove('open');
+    if (!sidebar.contains(e.target) && !btn.contains(e.target) && !overlay.contains(e.target)) {
+      closeSidebar();
     }
   });
 }
