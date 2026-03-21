@@ -531,263 +531,7 @@
 </head>
 <body>
 
-<!-- Embedded JSON data -->
-<script type="application/json" id="data-projects">
-[
-  {
-    "id": "proj-1",
-    "name": "АвтоПлюс Bot",
-    "description": "Telegram-бот для автосервиса: запись на ТО, напоминания, статус заказа.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/avtoplus-bot",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": true },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "feat: working bot @avto_plus_manager_bot with full pipeline",
-      "date": "2026-03-20T12:00:00Z",
-      "author": "developer-backend"
-    },
-    "stats": { "files": 1, "loc": 850 }
-  },
-  {
-    "id": "proj-2",
-    "name": "Tilda → AmoCRM Pipeline",
-    "description": "Интеграция Tilda-форм с AmoCRM + цепочка email-уведомлений.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/tilda-amocrm-pipeline",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": true },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "fix: all critical+high bugs fixed after 3 QA rounds",
-      "date": "2026-03-20T14:00:00Z",
-      "author": "developer-backend"
-    },
-    "stats": { "files": 37, "loc": 2466 }
-  },
-  {
-    "id": "proj-3",
-    "name": "Пятигорская коллегия адвокатов",
-    "description": "Лендинг для адвокатской коллегии — чистый HTML/CSS/JS, GitHub Pages.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/eduard-co-landing",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": true },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "feat: v1 landing deployed to GitHub Pages",
-      "date": "2026-03-20T15:00:00Z",
-      "author": "developer-frontend"
-    },
-    "stats": { "files": 1, "loc": 1726 }
-  },
-  {
-    "id": "proj-4",
-    "name": "Merge Game TMA",
-    "description": "Suika-style merge game как Telegram Mini App — физика, 11 уровней фруктов, анимации.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/merge-game-tma",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": false },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "feat: canvas physics, 11 fruit levels, merge animations, haptic feedback",
-      "date": "2026-03-20T20:18:00Z",
-      "author": "developer-frontend"
-    },
-    "stats": { "files": 1, "loc": 890 }
-  },
-  {
-    "id": "proj-5",
-    "name": "Clicker Game TMA",
-    "description": "Idle/tap кликер как Telegram Mini App — апгрейды, пассивный доход, престиж.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/clicker-game-tma",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": true },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "feat: tap mechanic, upgrade shop, offline income, prestige system",
-      "date": "2026-03-20T21:00:00Z",
-      "author": "developer-frontend"
-    },
-    "stats": { "files": 1, "loc": 942 }
-  },
-  {
-    "id": "proj-6",
-    "name": "Dream Team Dashboard",
-    "description": "Дашборд команды — карточки проектов, ростер агентов, лента активности, статистика.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/dream-dashboard",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": true },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "fix: all QA + review issues fixed (XSS, SRI, aria)",
-      "date": "2026-03-20T22:44:00Z",
-      "author": "developer-frontend"
-    },
-    "stats": { "files": 1, "loc": 1106 }
-  },
-  {
-    "id": "proj-7",
-    "name": "Landing Page Generator",
-    "description": "Генератор лендингов — 5-шаговый визард, 3 шаблона, предпросмотр, скачивание HTML.",
-    "status": "completed",
-    "github_url": "https://github.com/vkrasnovid/landing-generator",
-    "pipeline": [
-      { "name": "Artifacts", "done": true },
-      { "name": "Plan", "done": true },
-      { "name": "Implement", "done": true },
-      { "name": "Test", "done": true },
-      { "name": "Review", "done": true },
-      { "name": "Deploy", "done": true }
-    ],
-    "last_commit": {
-      "message": "fix: ReferenceError, XSS in hrefs, PII logging — all resolved",
-      "date": "2026-03-20T23:13:00Z",
-      "author": "developer-frontend"
-    },
-    "stats": { "files": 1, "loc": 2055 }
-  }
-]
-</script>
-
-<script type="application/json" id="data-agents">
-[
-  {
-    "id": "lead",
-    "role": "Orchestrator",
-    "model": "claude-opus-4-6",
-    "trust_level": 5,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "architect",
-    "role": "System Architect",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 4,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "developer-backend",
-    "role": "Backend Developer",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 4,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "developer-frontend",
-    "role": "Frontend Developer",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 4,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "developer-mobile",
-    "role": "Mobile Developer",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 4,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "integrator",
-    "role": "API Integration Specialist",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 3,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "tester",
-    "role": "QA Engineer",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 4,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "reviewer",
-    "role": "Code Reviewer",
-    "model": "claude-opus-4-6",
-    "trust_level": 5,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "devops",
-    "role": "DevOps Engineer",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 5,
-    "status": "idle",
-    "current_task": null
-  },
-  {
-    "id": "docs",
-    "role": "Technical Writer",
-    "model": "claude-sonnet-4-6",
-    "trust_level": 5,
-    "status": "idle",
-    "current_task": null
-  }
-]
-</script>
-
-<script type="application/json" id="data-activity">
-[
-  { "id": "act-01", "type": "deploy", "project": "Landing Page Generator", "message": "Deployed to GitHub Pages — all QA/review issues fixed", "timestamp": "2026-03-20T23:13:00Z", "author": "devops" },
-  { "id": "act-02", "type": "review", "project": "Landing Page Generator", "message": "1C (ReferenceError), 1H (XSS in hrefs), 1M (PII logging) — needs fix", "timestamp": "2026-03-20T23:00:00Z", "author": "reviewer" },
-  { "id": "act-03", "type": "test", "project": "Landing Page Generator", "message": "QA: 2 high, 4 medium, 6 low issues found", "timestamp": "2026-03-20T22:50:00Z", "author": "tester" },
-  { "id": "act-04", "type": "deploy", "project": "Dream Team Dashboard", "message": "Deployed to GitHub Pages — XSS, SRI, aria fixes applied", "timestamp": "2026-03-20T22:44:00Z", "author": "devops" },
-  { "id": "act-05", "type": "review", "project": "Dream Team Dashboard", "message": "5M issues: XSS scheme validation, SRI, div-by-zero, aria", "timestamp": "2026-03-20T22:35:00Z", "author": "reviewer" },
-  { "id": "act-06", "type": "test", "project": "Dream Team Dashboard", "message": "QA: 0 high, 2 medium, 5 low issues found", "timestamp": "2026-03-20T22:25:00Z", "author": "tester" },
-  { "id": "act-07", "type": "commit", "project": "Clicker Game TMA", "message": "feat: tap mechanic, upgrade shop, offline income, prestige system", "timestamp": "2026-03-20T21:00:00Z", "author": "developer-frontend" },
-  { "id": "act-08", "type": "deploy", "project": "Merge Game TMA", "message": "Deployed to GitHub Pages — 890 lines, canvas physics", "timestamp": "2026-03-20T20:18:00Z", "author": "devops" },
-  { "id": "act-09", "type": "commit", "project": "Merge Game TMA", "message": "feat: canvas physics, 11 fruit levels, merge animations, haptic", "timestamp": "2026-03-20T20:06:00Z", "author": "developer-frontend" },
-  { "id": "act-10", "type": "deploy", "project": "Пятигорская коллегия адвокатов", "message": "v1 deployed to GitHub Pages — 1726 lines", "timestamp": "2026-03-20T15:00:00Z", "author": "devops" },
-  { "id": "act-11", "type": "test", "project": "Tilda → AmoCRM Pipeline", "message": "QA APPROVED after 3 rounds — all critical+high bugs fixed", "timestamp": "2026-03-20T14:00:00Z", "author": "tester" },
-  { "id": "act-12", "type": "commit", "project": "Tilda → AmoCRM Pipeline", "message": "feat: Tilda webhook → AmoCRM lead + email chain (37 files, 2466 LOC)", "timestamp": "2026-03-20T13:00:00Z", "author": "developer-backend" },
-  { "id": "act-13", "type": "test", "project": "АвтоПлюс Bot", "message": "QA found 22 bugs — report submitted", "timestamp": "2026-03-20T12:30:00Z", "author": "tester" },
-  { "id": "act-14", "type": "commit", "project": "АвтоПлюс Bot", "message": "feat: working bot @avto_plus_manager_bot", "timestamp": "2026-03-20T12:00:00Z", "author": "developer-backend" },
-  { "id": "act-15", "type": "commit", "project": "Landing Page Generator", "message": "feat: 5-step wizard, 3 templates, live preview, download HTML", "timestamp": "2026-03-20T22:14:00Z", "author": "developer-frontend" }
-]
-</script>
+<!-- Data loaded from data.json -->
 
 <!-- ── Header ── -->
 <header class="header">
@@ -872,21 +616,42 @@
   </main>
 </div>
 
+<footer style="text-align:center;padding:12px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);">
+  <span id="last-updated">Last updated: —</span>
+</footer>
+
 <script>
 'use strict';
 
 const DEBUG = location.search.includes('debug');
 
-// ── Data Parsing ──────────────────────────────────────────────
-let projects, agents, activity;
-try { projects = JSON.parse(document.getElementById('data-projects').textContent); }
-catch (e) { console.error('[FIX] JSON.parse failed for data-projects', e); projects = []; }
-try { agents   = JSON.parse(document.getElementById('data-agents').textContent); }
-catch (e) { console.error('[FIX] JSON.parse failed for data-agents', e);   agents   = []; }
-try { activity = JSON.parse(document.getElementById('data-activity').textContent); }
-catch (e) { console.error('[FIX] JSON.parse failed for data-activity', e); activity = []; }
+// ── Data Loading ──────────────────────────────────────────────
+let projects = [], agents = [], activity = [];
 
-if (DEBUG) console.log('[init] data loaded', { projects: projects.length, agents: agents.length, activity: activity.length });
+async function loadData() {
+  try {
+    const resp = await fetch('data.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    projects = data.projects || [];
+    agents   = data.agents   || [];
+    activity = data.activity || [];
+    if (data.updated_at) {
+      const el = document.getElementById('last-updated');
+      if (el) el.textContent = 'Last updated: ' + new Date(data.updated_at).toLocaleString();
+    }
+  } catch (e) {
+    console.error('[data] Failed to load data.json', e);
+    const main = document.querySelector('.main');
+    if (main) {
+      const banner = document.createElement('div');
+      banner.style.cssText = 'background:#7f1d1d;color:#fca5a5;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:13px;';
+      banner.textContent = 'Failed to load dashboard data. Check that data.json is available.';
+      main.prepend(banner);
+    }
+  }
+  if (DEBUG) console.log('[init] data loaded', { projects: projects.length, agents: agents.length, activity: activity.length });
+}
 
 // ── Helpers ───────────────────────────────────────────────────
 function relativeTime(isoDate) {
@@ -1190,7 +955,8 @@ function initHamburger() {
 }
 
 // ── Bootstrap ─────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadData();
   renderStats();
   renderProjects();
   renderAgents();
