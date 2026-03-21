@@ -467,11 +467,19 @@
       "type": "commit",
       "project": "dream-dashboard",
       "message": "chore: update data.json (2026-03-21)",
-      "timestamp": "2026-03-21T06:36:53Z",
+      "timestamp": "2026-03-21T06:57:18Z",
       "author": "Dream Team Bot"
     },
     {
       "id": "act-02",
+      "type": "commit",
+      "project": "dream-dashboard",
+      "message": "chore: update data.json (2026-03-21)",
+      "timestamp": "2026-03-21T06:36:53Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
       "type": "commit",
       "project": "dream-dashboard",
       "message": "feat: dynamic data.json + update script (no more hardcoded data)",
@@ -479,7 +487,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-04",
       "type": "docs",
       "project": "landing-generator",
       "message": "docs: generate README via /aif-docs",
@@ -487,7 +495,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "docs",
       "project": "dream-dashboard",
       "message": "docs: generate README via /aif-docs",
@@ -495,7 +503,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-06",
       "type": "fix",
       "project": "dream-dashboard",
       "message": "fix: replace demo data with real project data (7 projects, 10 agents, real activity)",
@@ -503,19 +511,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-06",
+      "id": "act-07",
       "type": "fix",
       "project": "landing-generator",
       "message": "fix: resolve code review issues (C-01, H-01, M-01)",
       "timestamp": "2026-03-20T23:12:57Z",
-      "author": "developer"
-    },
-    {
-      "id": "act-07",
-      "type": "fix",
-      "project": "dream-dashboard",
-      "message": "fix: resolve code review issues (M-1..M-5)",
-      "timestamp": "2026-03-20T23:03:46Z",
       "author": "developer"
     },
     {
@@ -583,5 +583,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-21T06:57:18Z"
+  "updated_at": "2026-03-21T06:57:39Z"
 }
