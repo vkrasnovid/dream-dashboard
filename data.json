@@ -466,12 +466,20 @@
       "id": "act-01",
       "type": "commit",
       "project": "dream-dashboard",
+      "message": "chore: update data.json (2026-03-21)",
+      "timestamp": "2026-03-21T06:36:53Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "dream-dashboard",
       "message": "feat: dynamic data.json + update script (no more hardcoded data)",
       "timestamp": "2026-03-21T06:31:44Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-03",
       "type": "docs",
       "project": "landing-generator",
       "message": "docs: generate README via /aif-docs",
@@ -479,7 +487,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-04",
       "type": "docs",
       "project": "dream-dashboard",
       "message": "docs: generate README via /aif-docs",
@@ -487,7 +495,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "fix",
       "project": "dream-dashboard",
       "message": "fix: replace demo data with real project data (7 projects, 10 agents, real activity)",
@@ -495,7 +503,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-06",
       "type": "fix",
       "project": "landing-generator",
       "message": "fix: resolve code review issues (C-01, H-01, M-01)",
@@ -503,7 +511,7 @@
       "author": "developer"
     },
     {
-      "id": "act-06",
+      "id": "act-07",
       "type": "fix",
       "project": "dream-dashboard",
       "message": "fix: resolve code review issues (M-1..M-5)",
@@ -511,20 +519,12 @@
       "author": "developer"
     },
     {
-      "id": "act-07",
+      "id": "act-08",
       "type": "fix",
       "project": "landing-generator",
       "message": "fix: resolve QA issues (P2-01, P2-02, P3-01..P3-03, LOW fixes)",
       "timestamp": "2026-03-20T23:00:59Z",
       "author": "developer"
-    },
-    {
-      "id": "act-08",
-      "type": "fix",
-      "project": "dream-dashboard",
-      "message": "fix: resolve QA issues (M-1, M-2, L-1..L-5)",
-      "timestamp": "2026-03-20T22:55:31Z",
-      "author": "Dream Team Bot"
     },
     {
       "id": "act-09",
@@ -583,5 +583,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-21T06:36:53Z"
+  "updated_at": "2026-03-21T06:57:18Z"
 }
