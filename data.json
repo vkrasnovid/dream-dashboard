@@ -33,12 +33,12 @@
         }
       ],
       "last_commit": {
-        "message": "review: comprehensive code review with QA bug fix verification",
-        "date": "2026-03-21T09:26:04Z",
+        "message": "fix: digest every 3h, replace RIA with BBC+Meduza for diverse world news",
+        "date": "2026-03-21T09:45:49Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 32,
+        "files": 160,
         "loc": 100
       }
     },
@@ -506,6 +506,30 @@
   "activity": [
     {
       "id": "act-01",
+      "type": "fix",
+      "project": "news-digest-bot",
+      "message": "fix: digest every 3h, replace RIA with BBC+Meduza for diverse world news",
+      "timestamp": "2026-03-21T09:45:49Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "fix",
+      "project": "news-digest-bot",
+      "message": "fix: replace Yandex RSS with RIA/Lenta/RBC/MK-Saratov/NVersia, add User-Agent header",
+      "timestamp": "2026-03-21T09:43:54Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
+      "type": "fix",
+      "project": "news-digest-bot",
+      "message": "fix: address code review issues (CR-001 through CR-010)",
+      "timestamp": "2026-03-21T09:30:18Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-04",
       "type": "commit",
       "project": "news-digest-bot",
       "message": "review: comprehensive code review with QA bug fix verification",
@@ -513,35 +537,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-05",
       "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: resolve all QA issues (15 bugs)",
       "timestamp": "2026-03-21T09:22:36Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-03",
-      "type": "commit",
-      "project": "news-digest-bot",
-      "message": "qa: add QA report with 15 issues found across all bot modules",
-      "timestamp": "2026-03-21T09:13:57Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-04",
-      "type": "commit",
-      "project": "news-digest-bot",
-      "message": "feat: implement news digest Telegram bot",
-      "timestamp": "2026-03-21T09:10:33Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-05",
-      "type": "docs",
-      "project": "news-digest-bot",
-      "message": "docs: add layered architecture guidelines for news digest bot",
-      "timestamp": "2026-03-21T09:06:50Z",
       "author": "Dream Team Bot"
     },
     {
@@ -625,5 +625,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-21T09:30:17Z"
+  "updated_at": "2026-03-21T10:00:17Z"
 }
