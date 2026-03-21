@@ -467,7 +467,7 @@
       "type": "commit",
       "project": "dream-dashboard",
       "message": "chore: update data.json (2026-03-21)",
-      "timestamp": "2026-03-21T06:57:18Z",
+      "timestamp": "2026-03-21T06:57:39Z",
       "author": "Dream Team Bot"
     },
     {
@@ -475,11 +475,19 @@
       "type": "commit",
       "project": "dream-dashboard",
       "message": "chore: update data.json (2026-03-21)",
-      "timestamp": "2026-03-21T06:36:53Z",
+      "timestamp": "2026-03-21T06:57:18Z",
       "author": "Dream Team Bot"
     },
     {
       "id": "act-03",
+      "type": "commit",
+      "project": "dream-dashboard",
+      "message": "chore: update data.json (2026-03-21)",
+      "timestamp": "2026-03-21T06:36:53Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-04",
       "type": "commit",
       "project": "dream-dashboard",
       "message": "feat: dynamic data.json + update script (no more hardcoded data)",
@@ -487,7 +495,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "docs",
       "project": "landing-generator",
       "message": "docs: generate README via /aif-docs",
@@ -495,19 +503,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-06",
       "type": "docs",
       "project": "dream-dashboard",
       "message": "docs: generate README via /aif-docs",
       "timestamp": "2026-03-21T06:16:54Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-06",
-      "type": "fix",
-      "project": "dream-dashboard",
-      "message": "fix: replace demo data with real project data (7 projects, 10 agents, real activity)",
-      "timestamp": "2026-03-21T06:06:30Z",
       "author": "Dream Team Bot"
     },
     {
@@ -583,5 +583,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-21T06:57:39Z"
+  "updated_at": "2026-03-21T06:58:02Z"
 }
