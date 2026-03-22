@@ -82,7 +82,8 @@
       "stats": {
         "files": 129,
         "loc": 7925
-      }
+      },
+      "pages_url": "https://vkrasnovid.github.io/landing-generator/"
     },
     {
       "id": "proj-3",
@@ -124,7 +125,8 @@
       "stats": {
         "files": 130,
         "loc": 7525
-      }
+      },
+      "pages_url": "https://vkrasnovid.github.io/clicker-game-tma/"
     },
     {
       "id": "proj-4",
@@ -208,7 +210,8 @@
       "stats": {
         "files": 3,
         "loc": 400
-      }
+      },
+      "pages_url": "https://vkrasnovid.github.io/merge-game-tma/"
     },
     {
       "id": "proj-6",
@@ -250,7 +253,8 @@
       "stats": {
         "files": 1,
         "loc": 375
-      }
+      },
+      "pages_url": "https://vkrasnovid.github.io/eduard-co-landing/"
     },
     {
       "id": "proj-7",
