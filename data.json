@@ -6,6 +6,7 @@
       "description": "Telegram bot: hourly digest with currency rates, MOEX stocks, and news (world, Russia, Saratov)",
       "status": "planned",
       "github_url": "https://github.com/vkrasnovid/news-digest-bot",
+      "pages_url": null,
       "pipeline": [
         {
           "name": "Artifacts",
@@ -48,6 +49,7 @@
       "description": "Landing Page Generator — create beautiful landing pages in minutes",
       "status": "in-progress",
       "github_url": "https://github.com/vkrasnovid/landing-generator",
+      "pages_url": "https://vkrasnovid.github.io/landing-generator/",
       "pipeline": [
         {
           "name": "Artifacts",
@@ -90,6 +92,7 @@
       "description": "Кликер — Telegram Mini App (idle/tap game)",
       "status": "in-progress",
       "github_url": "https://github.com/vkrasnovid/clicker-game-tma",
+      "pages_url": "https://vkrasnovid.github.io/clicker-game-tma/",
       "pipeline": [
         {
           "name": "Artifacts",
@@ -132,6 +135,7 @@
       "description": "Telegram бот для автосервиса АвтоПлюс — запись на обслуживание",
       "status": "planned",
       "github_url": "https://github.com/vkrasnovid/avtoplus-bot",
+      "pages_url": null,
       "pipeline": [
         {
           "name": "Artifacts",
@@ -174,6 +178,7 @@
       "description": "Merge Game — Telegram Mini App (Suika-style)",
       "status": "in-progress",
       "github_url": "https://github.com/vkrasnovid/merge-game-tma",
+      "pages_url": "https://vkrasnovid.github.io/merge-game-tma/",
       "pipeline": [
         {
           "name": "Artifacts",
@@ -216,6 +221,7 @@
       "description": "Лендинг адвокатской фирмы Эдуард и Co. (Пятигорск)",
       "status": "in-progress",
       "github_url": "https://github.com/vkrasnovid/eduard-co-landing",
+      "pages_url": "https://vkrasnovid.github.io/eduard-co-landing/",
       "pipeline": [
         {
           "name": "Artifacts",
@@ -258,6 +264,7 @@
       "description": "Tilda → AmoCRM + Email chain integration",
       "status": "completed",
       "github_url": "https://github.com/vkrasnovid/tilda-amocrm-pipeline",
+      "pages_url": null,
       "pipeline": [
         {
           "name": "Artifacts",
@@ -300,6 +307,7 @@
       "description": "МоеЗдоровье — мобильное приложение для хранения медицинских данных (Flutter)",
       "status": "planned",
       "github_url": "https://github.com/vkrasnovid/moe-zdorovye",
+      "pages_url": null,
       "pipeline": [
         {
           "name": "Artifacts",
@@ -342,6 +350,7 @@
       "description": "Jwt auth pet project",
       "status": "planned",
       "github_url": "https://github.com/vkrasnovid/petJwtAuth",
+      "pages_url": null,
       "pipeline": [
         {
           "name": "Artifacts",
@@ -384,6 +393,7 @@
       "description": "No description",
       "status": "planned",
       "github_url": "https://github.com/vkrasnovid/mvc",
+      "pages_url": null,
       "pipeline": [
         {
           "name": "Artifacts",
@@ -625,5 +635,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-22T08:00:18Z"
+  "updated_at": "2026-03-22T08:21:38Z"
 }
