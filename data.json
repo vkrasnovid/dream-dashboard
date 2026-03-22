@@ -33,12 +33,12 @@
         }
       ],
       "last_commit": {
-        "message": "fix: digest every 3h, replace RIA with BBC+Meduza for diverse world news",
-        "date": "2026-03-21T09:45:49Z",
+        "message": "fix: remove language filter from NewsAPI (not supported on free plan)",
+        "date": "2026-03-22T07:42:39Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 160,
+        "files": 163,
         "loc": 7850
       }
     },
@@ -82,8 +82,7 @@
       "stats": {
         "files": 129,
         "loc": 7925
-      },
-      "pages_url": "https://vkrasnovid.github.io/landing-generator/"
+      }
     },
     {
       "id": "proj-3",
@@ -125,8 +124,7 @@
       "stats": {
         "files": 130,
         "loc": 7525
-      },
-      "pages_url": "https://vkrasnovid.github.io/clicker-game-tma/"
+      }
     },
     {
       "id": "proj-4",
@@ -210,8 +208,7 @@
       "stats": {
         "files": 3,
         "loc": 400
-      },
-      "pages_url": "https://vkrasnovid.github.io/merge-game-tma/"
+      }
     },
     {
       "id": "proj-6",
@@ -253,8 +250,7 @@
       "stats": {
         "files": 1,
         "loc": 375
-      },
-      "pages_url": "https://vkrasnovid.github.io/eduard-co-landing/"
+      }
     },
     {
       "id": "proj-7",
@@ -512,12 +508,28 @@
       "id": "act-01",
       "type": "fix",
       "project": "news-digest-bot",
+      "message": "fix: remove language filter from NewsAPI (not supported on free plan)",
+      "timestamp": "2026-03-22T07:42:39Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "news-digest-bot",
+      "message": "feat: add /details command for topic-based news search via NewsAPI",
+      "timestamp": "2026-03-22T07:40:00Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
+      "type": "fix",
+      "project": "news-digest-bot",
       "message": "fix: digest every 3h, replace RIA with BBC+Meduza for diverse world news",
       "timestamp": "2026-03-21T09:45:49Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-04",
       "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: replace Yandex RSS with RIA/Lenta/RBC/MK-Saratov/NVersia, add User-Agent header",
@@ -525,27 +537,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-05",
       "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: address code review issues (CR-001 through CR-010)",
       "timestamp": "2026-03-21T09:30:18Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-04",
-      "type": "commit",
-      "project": "news-digest-bot",
-      "message": "review: comprehensive code review with QA bug fix verification",
-      "timestamp": "2026-03-21T09:26:04Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-05",
-      "type": "fix",
-      "project": "news-digest-bot",
-      "message": "fix: resolve all QA issues (15 bugs)",
-      "timestamp": "2026-03-21T09:22:36Z",
       "author": "Dream Team Bot"
     },
     {
@@ -629,5 +625,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-21T20:30:17Z"
+  "updated_at": "2026-03-22T08:00:18Z"
 }
