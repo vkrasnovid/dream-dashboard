@@ -2,6 +2,49 @@
   "projects": [
     {
       "id": "proj-1",
+      "name": "landing-generator",
+      "description": "Landing Page Generator — create beautiful landing pages in minutes",
+      "status": "in-progress",
+      "github_url": "https://github.com/vkrasnovid/landing-generator",
+      "pages_url": "https://vkrasnovid.github.io/landing-generator/",
+      "pipeline": [
+        {
+          "name": "Artifacts",
+          "done": true
+        },
+        {
+          "name": "Plan",
+          "done": true
+        },
+        {
+          "name": "Implement",
+          "done": false
+        },
+        {
+          "name": "Test",
+          "done": true
+        },
+        {
+          "name": "Review",
+          "done": true
+        },
+        {
+          "name": "Deploy",
+          "done": true
+        }
+      ],
+      "last_commit": {
+        "message": "fix: contact text color in Minimal template (dark on dark bug)",
+        "date": "2026-03-22T09:36:14Z",
+        "author": "Dream Team Bot"
+      },
+      "stats": {
+        "files": 129,
+        "loc": 7925
+      }
+    },
+    {
+      "id": "proj-2",
       "name": "news-digest-bot",
       "description": "Telegram bot: hourly digest with currency rates, MOEX stocks, and news (world, Russia, Saratov)",
       "status": "planned",
@@ -41,49 +84,6 @@
       "stats": {
         "files": 163,
         "loc": 8050
-      }
-    },
-    {
-      "id": "proj-2",
-      "name": "landing-generator",
-      "description": "Landing Page Generator — create beautiful landing pages in minutes",
-      "status": "in-progress",
-      "github_url": "https://github.com/vkrasnovid/landing-generator",
-      "pages_url": "https://vkrasnovid.github.io/landing-generator/",
-      "pipeline": [
-        {
-          "name": "Artifacts",
-          "done": true
-        },
-        {
-          "name": "Plan",
-          "done": true
-        },
-        {
-          "name": "Implement",
-          "done": false
-        },
-        {
-          "name": "Test",
-          "done": true
-        },
-        {
-          "name": "Review",
-          "done": true
-        },
-        {
-          "name": "Deploy",
-          "done": true
-        }
-      ],
-      "last_commit": {
-        "message": "docs: generate README via /aif-docs",
-        "date": "2026-03-21T06:17:53Z",
-        "author": "Dream Team Bot"
-      },
-      "stats": {
-        "files": 129,
-        "loc": 7925
       }
     },
     {
@@ -517,13 +517,21 @@
     {
       "id": "act-01",
       "type": "fix",
+      "project": "landing-generator",
+      "message": "fix: contact text color in Minimal template (dark on dark bug)",
+      "timestamp": "2026-03-22T09:36:14Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: remove language filter from NewsAPI (not supported on free plan)",
       "timestamp": "2026-03-22T07:42:39Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-03",
       "type": "commit",
       "project": "news-digest-bot",
       "message": "feat: add /details command for topic-based news search via NewsAPI",
@@ -531,7 +539,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-04",
       "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: digest every 3h, replace RIA with BBC+Meduza for diverse world news",
@@ -539,7 +547,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: replace Yandex RSS with RIA/Lenta/RBC/MK-Saratov/NVersia, add User-Agent header",
@@ -547,7 +555,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-06",
       "type": "fix",
       "project": "news-digest-bot",
       "message": "fix: address code review issues (CR-001 through CR-010)",
@@ -555,7 +563,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-06",
+      "id": "act-07",
       "type": "docs",
       "project": "landing-generator",
       "message": "docs: generate README via /aif-docs",
@@ -563,7 +571,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-07",
+      "id": "act-08",
       "type": "fix",
       "project": "landing-generator",
       "message": "fix: resolve code review issues (C-01, H-01, M-01)",
@@ -571,7 +579,7 @@
       "author": "developer"
     },
     {
-      "id": "act-08",
+      "id": "act-09",
       "type": "fix",
       "project": "landing-generator",
       "message": "fix: resolve QA issues (P2-01, P2-02, P3-01..P3-03, LOW fixes)",
@@ -579,19 +587,11 @@
       "author": "developer"
     },
     {
-      "id": "act-09",
+      "id": "act-10",
       "type": "commit",
       "project": "landing-generator",
       "message": "feat: complete landing generator via AIF implement",
       "timestamp": "2026-03-20T22:51:08Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-10",
-      "type": "commit",
-      "project": "landing-generator",
-      "message": "chore: add AIF skills",
-      "timestamp": "2026-03-20T22:18:04Z",
       "author": "Dream Team Bot"
     },
     {
@@ -635,5 +635,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-22T09:00:26Z"
+  "updated_at": "2026-03-22T10:00:17Z"
 }
