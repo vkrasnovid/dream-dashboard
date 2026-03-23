@@ -2,6 +2,49 @@
   "projects": [
     {
       "id": "proj-1",
+      "name": "json-schema-generator",
+      "description": "Generate maximally-filled JSON instances from JSON Schema (Python, stdlib only)",
+      "status": "planned",
+      "github_url": "https://github.com/vkrasnovid/json-schema-generator",
+      "pages_url": null,
+      "pipeline": [
+        {
+          "name": "Artifacts",
+          "done": false
+        },
+        {
+          "name": "Plan",
+          "done": false
+        },
+        {
+          "name": "Implement",
+          "done": false
+        },
+        {
+          "name": "Test",
+          "done": false
+        },
+        {
+          "name": "Review",
+          "done": false
+        },
+        {
+          "name": "Deploy",
+          "done": false
+        }
+      ],
+      "last_commit": {
+        "message": "feat: initial release — JSON Schema max-filled generator",
+        "date": "2026-03-23T17:03:54Z",
+        "author": "Dream Team Bot"
+      },
+      "stats": {
+        "files": 4,
+        "loc": 100
+      }
+    },
+    {
+      "id": "proj-2",
       "name": "vibecheck",
       "description": "VibeCheck.live — paste text, see its emotional weather",
       "status": "planned",
@@ -44,7 +87,7 @@
       }
     },
     {
-      "id": "proj-2",
+      "id": "proj-3",
       "name": "agentlens",
       "description": "AgentLens — record, replay, and debug your AI agent sessions",
       "status": "planned",
@@ -87,7 +130,7 @@
       }
     },
     {
-      "id": "proj-3",
+      "id": "proj-4",
       "name": "local-services",
       "description": "No description",
       "status": "planned",
@@ -130,7 +173,7 @@
       }
     },
     {
-      "id": "proj-4",
+      "id": "proj-5",
       "name": "landing-generator",
       "description": "Landing Page Generator — create beautiful landing pages in minutes",
       "status": "in-progress",
@@ -173,7 +216,7 @@
       }
     },
     {
-      "id": "proj-5",
+      "id": "proj-6",
       "name": "news-digest-bot",
       "description": "Telegram bot: hourly digest with currency rates, MOEX stocks, and news (world, Russia, Saratov)",
       "status": "planned",
@@ -216,7 +259,7 @@
       }
     },
     {
-      "id": "proj-6",
+      "id": "proj-7",
       "name": "clicker-game-tma",
       "description": "Кликер — Telegram Mini App (idle/tap game)",
       "status": "in-progress",
@@ -259,7 +302,7 @@
       }
     },
     {
-      "id": "proj-7",
+      "id": "proj-8",
       "name": "avtoplus-bot",
       "description": "Telegram бот для автосервиса АвтоПлюс — запись на обслуживание",
       "status": "planned",
@@ -302,7 +345,7 @@
       }
     },
     {
-      "id": "proj-8",
+      "id": "proj-9",
       "name": "merge-game-tma",
       "description": "Merge Game — Telegram Mini App (Suika-style)",
       "status": "in-progress",
@@ -345,7 +388,7 @@
       }
     },
     {
-      "id": "proj-9",
+      "id": "proj-10",
       "name": "eduard-co-landing",
       "description": "Лендинг адвокатской фирмы Эдуард и Co. (Пятигорск)",
       "status": "in-progress",
@@ -388,7 +431,7 @@
       }
     },
     {
-      "id": "proj-10",
+      "id": "proj-11",
       "name": "tilda-amocrm-pipeline",
       "description": "Tilda → AmoCRM + Email chain integration",
       "status": "completed",
@@ -431,7 +474,7 @@
       }
     },
     {
-      "id": "proj-11",
+      "id": "proj-12",
       "name": "moe-zdorovye",
       "description": "МоеЗдоровье — мобильное приложение для хранения медицинских данных (Flutter)",
       "status": "planned",
@@ -474,7 +517,7 @@
       }
     },
     {
-      "id": "proj-12",
+      "id": "proj-13",
       "name": "petJwtAuth",
       "description": "Jwt auth pet project",
       "status": "planned",
@@ -517,7 +560,7 @@
       }
     },
     {
-      "id": "proj-13",
+      "id": "proj-14",
       "name": "mvc",
       "description": "No description",
       "status": "planned",
@@ -646,13 +689,21 @@
     {
       "id": "act-01",
       "type": "commit",
+      "project": "json-schema-generator",
+      "message": "feat: initial release — JSON Schema max-filled generator",
+      "timestamp": "2026-03-23T17:03:54Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
       "project": "vibecheck",
       "message": "merge: feature/main-app -> main (keep feature branch test files)",
       "timestamp": "2026-03-22T21:42:20Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-03",
       "type": "docs",
       "project": "vibecheck",
       "message": "docs: add comprehensive README",
@@ -660,7 +711,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-04",
       "type": "test",
       "project": "vibecheck",
       "message": "test: add reliable Playwright E2E tests (30+ tests)",
@@ -668,7 +719,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "test",
       "project": "vibecheck",
       "message": "test: 34 Playwright E2E tests (23/34 passing) — submit, weather, sidebar, share, mobile",
@@ -676,7 +727,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-06",
       "type": "fix",
       "project": "agentlens",
       "message": "fix: CORS wildcard removed, path traversal guard, session_id field fix, upload size check before read",
@@ -684,7 +735,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-06",
+      "id": "act-07",
       "type": "test",
       "project": "agentlens",
       "message": "test: add Playwright E2E tests for AgentLens frontend",
@@ -692,7 +743,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-07",
+      "id": "act-08",
       "type": "fix",
       "project": "vibecheck",
       "message": "fix: prompt injection sanitize, DPR double-scale bug, validate type guards",
@@ -700,7 +751,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-08",
+      "id": "act-09",
       "type": "commit",
       "project": "agentlens",
       "message": "feat: add .env.example with NEXT_PUBLIC_API_URL",
@@ -708,7 +759,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-09",
+      "id": "act-10",
       "type": "commit",
       "project": "agentlens",
       "message": "feat: implement complete AgentLens frontend — landing, sessions, timeline",
@@ -716,7 +767,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-10",
+      "id": "act-11",
       "type": "fix",
       "project": "agentlens",
       "message": "fix: globals.css Tailwind v4 syntax, EventCard timestamp type fix",
@@ -724,7 +775,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-11",
+      "id": "act-12",
       "type": "docs",
       "project": "local-services",
       "message": "docs: comprehensive README and development guide",
@@ -732,7 +783,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-12",
+      "id": "act-13",
       "type": "commit",
       "project": "local-services",
       "message": "feat: merge Flutter mobile app (21 screens)",
@@ -740,7 +791,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-13",
+      "id": "act-14",
       "type": "commit",
       "project": "local-services",
       "message": "feat: merge admin panel (Next.js 7 pages)",
@@ -748,21 +799,13 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-14",
+      "id": "act-15",
       "type": "commit",
       "project": "local-services",
       "message": "feat: merge backend (47 endpoints, YuKassa, WebSocket)",
       "timestamp": "2026-03-22T11:33:59Z",
       "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-15",
-      "type": "commit",
-      "project": "local-services",
-      "message": "Revert \"fix: resolve 5 critical review issues (async SDK, webhook security, slot race condition)\"",
-      "timestamp": "2026-03-22T11:32:33Z",
-      "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-22T23:00:22Z"
+  "updated_at": "2026-03-23T17:30:25Z"
 }
