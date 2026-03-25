@@ -636,9 +636,9 @@
         }
       ],
       "last_commit": {
-        "message": "Server Error",
-        "date": "null",
-        "author": "null\nunknown"
+        "message": "Fix NPE on empty employee data",
+        "date": "2019-04-18T08:38:58Z",
+        "author": "vkrasnovid"
       },
       "stats": {
         "files": 21,
@@ -850,5 +850,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-25T17:00:40Z"
+  "updated_at": "2026-03-25T17:30:28Z"
 }
