@@ -2,6 +2,49 @@
   "projects": [
     {
       "id": "proj-1",
+      "name": "mobile-games",
+      "description": "10 addictive mobile games built with Flutter — Android APKs included",
+      "status": "planned",
+      "github_url": "https://github.com/vkrasnovid/mobile-games",
+      "pages_url": null,
+      "pipeline": [
+        {
+          "name": "Artifacts",
+          "done": false
+        },
+        {
+          "name": "Plan",
+          "done": false
+        },
+        {
+          "name": "Implement",
+          "done": false
+        },
+        {
+          "name": "Test",
+          "done": false
+        },
+        {
+          "name": "Review",
+          "done": false
+        },
+        {
+          "name": "Deploy",
+          "done": false
+        }
+      ],
+      "last_commit": {
+        "message": "chore: move APKs to GitHub release (too large for git)",
+        "date": "2026-03-26T23:27:54Z",
+        "author": "Dream Team Bot"
+      },
+      "stats": {
+        "files": 1284,
+        "loc": 100
+      }
+    },
+    {
+      "id": "proj-2",
       "name": "washatai",
       "description": "Paste any text. Get the brutal truth about whether it was written by a human or AI. 🤖🔍",
       "status": "planned",
@@ -44,7 +87,7 @@
       }
     },
     {
-      "id": "proj-2",
+      "id": "proj-3",
       "name": "roast-my-repo",
       "description": "🔥 Get your GitHub repo savagely roasted by AI",
       "status": "planned",
@@ -87,7 +130,7 @@
       }
     },
     {
-      "id": "proj-3",
+      "id": "proj-4",
       "name": "json-schema-generator",
       "description": "Generate maximally-filled JSON instances from JSON Schema (Python, stdlib only)",
       "status": "planned",
@@ -130,7 +173,7 @@
       }
     },
     {
-      "id": "proj-4",
+      "id": "proj-5",
       "name": "vibecheck",
       "description": "VibeCheck.live — paste text, see its emotional weather",
       "status": "planned",
@@ -173,7 +216,7 @@
       }
     },
     {
-      "id": "proj-5",
+      "id": "proj-6",
       "name": "agentlens",
       "description": "AgentLens — record, replay, and debug your AI agent sessions",
       "status": "planned",
@@ -216,7 +259,7 @@
       }
     },
     {
-      "id": "proj-6",
+      "id": "proj-7",
       "name": "local-services",
       "description": "No description",
       "status": "planned",
@@ -259,7 +302,7 @@
       }
     },
     {
-      "id": "proj-7",
+      "id": "proj-8",
       "name": "landing-generator",
       "description": "Landing Page Generator — create beautiful landing pages in minutes",
       "status": "in-progress",
@@ -302,7 +345,7 @@
       }
     },
     {
-      "id": "proj-8",
+      "id": "proj-9",
       "name": "news-digest-bot",
       "description": "Telegram bot: hourly digest with currency rates, MOEX stocks, and news (world, Russia, Saratov)",
       "status": "planned",
@@ -345,7 +388,7 @@
       }
     },
     {
-      "id": "proj-9",
+      "id": "proj-10",
       "name": "clicker-game-tma",
       "description": "Кликер — Telegram Mini App (idle/tap game)",
       "status": "in-progress",
@@ -388,7 +431,7 @@
       }
     },
     {
-      "id": "proj-10",
+      "id": "proj-11",
       "name": "avtoplus-bot",
       "description": "Telegram бот для автосервиса АвтоПлюс — запись на обслуживание",
       "status": "planned",
@@ -431,7 +474,7 @@
       }
     },
     {
-      "id": "proj-11",
+      "id": "proj-12",
       "name": "merge-game-tma",
       "description": "Merge Game — Telegram Mini App (Suika-style)",
       "status": "in-progress",
@@ -474,7 +517,7 @@
       }
     },
     {
-      "id": "proj-12",
+      "id": "proj-13",
       "name": "eduard-co-landing",
       "description": "Лендинг адвокатской фирмы Эдуард и Co. (Пятигорск)",
       "status": "in-progress",
@@ -517,7 +560,7 @@
       }
     },
     {
-      "id": "proj-13",
+      "id": "proj-14",
       "name": "tilda-amocrm-pipeline",
       "description": "Tilda → AmoCRM + Email chain integration",
       "status": "completed",
@@ -560,7 +603,7 @@
       }
     },
     {
-      "id": "proj-14",
+      "id": "proj-15",
       "name": "moe-zdorovye",
       "description": "МоеЗдоровье — мобильное приложение для хранения медицинских данных (Flutter)",
       "status": "planned",
@@ -603,7 +646,7 @@
       }
     },
     {
-      "id": "proj-15",
+      "id": "proj-16",
       "name": "petJwtAuth",
       "description": "Jwt auth pet project",
       "status": "planned",
@@ -646,7 +689,7 @@
       }
     },
     {
-      "id": "proj-16",
+      "id": "proj-17",
       "name": "mvc",
       "description": "No description",
       "status": "planned",
@@ -775,13 +818,29 @@
     {
       "id": "act-01",
       "type": "commit",
+      "project": "mobile-games",
+      "message": "chore: move APKs to GitHub release (too large for git)",
+      "timestamp": "2026-03-26T23:27:54Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "mobile-games",
+      "message": "feat: 10 addictive mobile games built with Flutter",
+      "timestamp": "2026-03-26T23:27:42Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
+      "type": "commit",
       "project": "washatai",
       "message": "add: 10 Playwright E2E tests (all passing)",
       "timestamp": "2026-03-25T22:14:18Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-04",
       "type": "fix",
       "project": "washatai",
       "message": "fix: add .gitignore, remove node_modules from tracking",
@@ -789,7 +848,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-05",
       "type": "commit",
       "project": "washatai",
       "message": "add: Dockerfile for docker-compose deployment",
@@ -797,7 +856,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-06",
       "type": "commit",
       "project": "washatai",
       "message": "init: WasThatAI - AI text analyzer with gateway integration",
@@ -805,7 +864,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-07",
       "type": "commit",
       "project": "roast-my-repo",
       "message": "feat: RoastMyRepo — GitHub repo AI analyzer",
@@ -813,7 +872,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-06",
+      "id": "act-08",
       "type": "fix",
       "project": "json-schema-generator",
       "message": "fix: ensure ё/Ё and all special chars covered in pattern fallback",
@@ -821,7 +880,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-07",
+      "id": "act-09",
       "type": "fix",
       "project": "json-schema-generator",
       "message": "fix: ensure all character groups in pattern char classes are used",
@@ -829,7 +888,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-08",
+      "id": "act-10",
       "type": "fix",
       "project": "json-schema-generator",
       "message": "fix: smart _fill_pattern_fallback with regex parser + rstr support",
@@ -837,7 +896,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-09",
+      "id": "act-11",
       "type": "docs",
       "project": "json-schema-generator",
       "message": "docs: add Russian README (README_RU.md)",
@@ -845,7 +904,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-10",
+      "id": "act-12",
       "type": "commit",
       "project": "json-schema-generator",
       "message": "feat: initial release — JSON Schema max-filled generator",
@@ -853,7 +912,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-11",
+      "id": "act-13",
       "type": "commit",
       "project": "vibecheck",
       "message": "merge: feature/main-app -> main (keep feature branch test files)",
@@ -861,7 +920,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-12",
+      "id": "act-14",
       "type": "docs",
       "project": "vibecheck",
       "message": "docs: add comprehensive README",
@@ -869,29 +928,13 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-13",
+      "id": "act-15",
       "type": "test",
       "project": "vibecheck",
       "message": "test: add reliable Playwright E2E tests (30+ tests)",
       "timestamp": "2026-03-22T21:39:59Z",
       "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-14",
-      "type": "test",
-      "project": "vibecheck",
-      "message": "test: 34 Playwright E2E tests (23/34 passing) — submit, weather, sidebar, share, mobile",
-      "timestamp": "2026-03-22T21:34:33Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-15",
-      "type": "fix",
-      "project": "agentlens",
-      "message": "fix: CORS wildcard removed, path traversal guard, session_id field fix, upload size check before read",
-      "timestamp": "2026-03-22T21:19:29Z",
-      "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-25T23:30:29Z"
+  "updated_at": "2026-03-26T23:30:32Z"
 }
