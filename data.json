@@ -34,13 +34,13 @@
         }
       ],
       "last_commit": {
-        "message": "Deploy: SUNWARD landing with proper basePath",
-        "date": "2026-03-27T18:09:50Z",
+        "message": "docs: add README",
+        "date": "2026-03-27T19:26:46Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 13,
-        "loc": 3350
+        "files": 7,
+        "loc": 3650
       }
     },
     {
@@ -860,14 +860,30 @@
   "activity": [
     {
       "id": "act-01",
-      "type": "commit",
+      "type": "docs",
       "project": "sunward-landing",
-      "message": "Deploy: SUNWARD landing with proper basePath",
-      "timestamp": "2026-03-27T18:09:50Z",
+      "message": "docs: add README",
+      "timestamp": "2026-03-27T19:26:46Z",
       "author": "Dream Team Bot"
     },
     {
       "id": "act-02",
+      "type": "commit",
+      "project": "sunward-landing",
+      "message": "feat: SUNWARD landing page - modern premium design",
+      "timestamp": "2026-03-27T19:23:21Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
+      "type": "commit",
+      "project": "sunward-landing",
+      "message": "init",
+      "timestamp": "2026-03-27T18:56:11Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-04",
       "type": "commit",
       "project": "mobile-games",
       "message": "chore: move APKs to GitHub release (too large for git)",
@@ -875,7 +891,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-05",
       "type": "commit",
       "project": "mobile-games",
       "message": "feat: 10 addictive mobile games built with Flutter",
@@ -883,7 +899,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-06",
       "type": "commit",
       "project": "washatai",
       "message": "add: 10 Playwright E2E tests (all passing)",
@@ -891,7 +907,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-07",
       "type": "fix",
       "project": "washatai",
       "message": "fix: add .gitignore, remove node_modules from tracking",
@@ -899,7 +915,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-06",
+      "id": "act-08",
       "type": "commit",
       "project": "washatai",
       "message": "add: Dockerfile for docker-compose deployment",
@@ -907,7 +923,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-07",
+      "id": "act-09",
       "type": "commit",
       "project": "washatai",
       "message": "init: WasThatAI - AI text analyzer with gateway integration",
@@ -915,7 +931,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-08",
+      "id": "act-10",
       "type": "commit",
       "project": "roast-my-repo",
       "message": "feat: RoastMyRepo — GitHub repo AI analyzer",
@@ -923,7 +939,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-09",
+      "id": "act-11",
       "type": "fix",
       "project": "json-schema-generator",
       "message": "fix: ensure ё/Ё and all special chars covered in pattern fallback",
@@ -931,7 +947,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-10",
+      "id": "act-12",
       "type": "fix",
       "project": "json-schema-generator",
       "message": "fix: ensure all character groups in pattern char classes are used",
@@ -939,7 +955,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-11",
+      "id": "act-13",
       "type": "fix",
       "project": "json-schema-generator",
       "message": "fix: smart _fill_pattern_fallback with regex parser + rstr support",
@@ -947,7 +963,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-12",
+      "id": "act-14",
       "type": "docs",
       "project": "json-schema-generator",
       "message": "docs: add Russian README (README_RU.md)",
@@ -955,29 +971,13 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-13",
+      "id": "act-15",
       "type": "commit",
       "project": "json-schema-generator",
       "message": "feat: initial release — JSON Schema max-filled generator",
       "timestamp": "2026-03-23T17:03:54Z",
       "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-14",
-      "type": "commit",
-      "project": "vibecheck",
-      "message": "merge: feature/main-app -> main (keep feature branch test files)",
-      "timestamp": "2026-03-22T21:42:20Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-15",
-      "type": "docs",
-      "project": "vibecheck",
-      "message": "docs: add comprehensive README",
-      "timestamp": "2026-03-22T21:40:48Z",
-      "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-27T18:30:36Z"
+  "updated_at": "2026-03-27T19:30:33Z"
 }
