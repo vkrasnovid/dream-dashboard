@@ -34,8 +34,8 @@
         }
       ],
       "last_commit": {
-        "message": "Deploy: SUNWARD landing page",
-        "date": "2026-03-27T16:20:45Z",
+        "message": "Deploy: SUNWARD landing with proper basePath",
+        "date": "2026-03-27T18:09:50Z",
         "author": "Dream Team Bot"
       },
       "stats": {
@@ -862,8 +862,8 @@
       "id": "act-01",
       "type": "commit",
       "project": "sunward-landing",
-      "message": "Deploy: SUNWARD landing page",
-      "timestamp": "2026-03-27T16:20:45Z",
+      "message": "Deploy: SUNWARD landing with proper basePath",
+      "timestamp": "2026-03-27T18:09:50Z",
       "author": "Dream Team Bot"
     },
     {
@@ -979,5 +979,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-27T17:30:33Z"
+  "updated_at": "2026-03-27T18:30:36Z"
 }
