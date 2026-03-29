@@ -2,6 +2,49 @@
   "projects": [
     {
       "id": "proj-1",
+      "name": "sunward-catalog",
+      "description": "Каталог спецтехники SUNWARD — 42 модели",
+      "status": "planned",
+      "github_url": "https://github.com/vkrasnovid/sunward-catalog",
+      "pages_url": null,
+      "pipeline": [
+        {
+          "name": "Artifacts",
+          "done": false
+        },
+        {
+          "name": "Plan",
+          "done": false
+        },
+        {
+          "name": "Implement",
+          "done": false
+        },
+        {
+          "name": "Test",
+          "done": false
+        },
+        {
+          "name": "Review",
+          "done": false
+        },
+        {
+          "name": "Deploy",
+          "done": false
+        }
+      ],
+      "last_commit": {
+        "message": "fix: lightbox overlay blocking clicks, broken image src, image error handling",
+        "date": "2026-03-29T20:00:20Z",
+        "author": "Dream Team Bot"
+      },
+      "stats": {
+        "files": 5,
+        "loc": 1025
+      }
+    },
+    {
+      "id": "proj-2",
       "name": "sunward-landing",
       "description": "SUNWARD Equipment - Modern Landing Page",
       "status": "planned",
@@ -41,49 +84,6 @@
       "stats": {
         "files": 7,
         "loc": 3850
-      }
-    },
-    {
-      "id": "proj-2",
-      "name": "sunward-catalog",
-      "description": "Каталог спецтехники SUNWARD — 42 модели",
-      "status": "planned",
-      "github_url": "https://github.com/vkrasnovid/sunward-catalog",
-      "pages_url": null,
-      "pipeline": [
-        {
-          "name": "Artifacts",
-          "done": false
-        },
-        {
-          "name": "Plan",
-          "done": false
-        },
-        {
-          "name": "Implement",
-          "done": false
-        },
-        {
-          "name": "Test",
-          "done": false
-        },
-        {
-          "name": "Review",
-          "done": false
-        },
-        {
-          "name": "Deploy",
-          "done": false
-        }
-      ],
-      "last_commit": {
-        "message": "feat: SUNWARD catalog SPA — 42 models, 3 categories, filters, search, product detail pages",
-        "date": "2026-03-27T20:29:01Z",
-        "author": "Dream Team Bot"
-      },
-      "stats": {
-        "files": 5,
-        "loc": 1025
       }
     },
     {
@@ -1022,5 +1022,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-29T20:00:40Z"
+  "updated_at": "2026-03-29T20:30:38Z"
 }
