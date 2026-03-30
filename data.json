@@ -34,12 +34,12 @@
         }
       ],
       "last_commit": {
-        "message": "Initial commit: project brief",
-        "date": "2026-03-30T22:28:15Z",
+        "message": "feat: Eatwise MVP — AI restaurant menu advisor",
+        "date": "2026-03-30T22:49:33Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 2,
+        "files": 38,
         "loc": 100
       }
     },
@@ -948,12 +948,20 @@
       "id": "act-01",
       "type": "commit",
       "project": "eatwise",
+      "message": "feat: Eatwise MVP — AI restaurant menu advisor",
+      "timestamp": "2026-03-30T22:49:33Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "eatwise",
       "message": "Initial commit: project brief",
       "timestamp": "2026-03-30T22:28:15Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-03",
       "type": "test",
       "project": "sunward-catalog",
       "message": "test: add Playwright QA suite (111 tests, 109 pass) + QA_REPORT.md",
@@ -961,7 +969,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-04",
       "type": "fix",
       "project": "sunward-catalog",
       "message": "fix: lightbox overlay blocking clicks, broken image src, image error handling",
@@ -969,7 +977,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "fix",
       "project": "sunward-landing",
       "message": "fix: update catalog links to SPA, remove empty categories",
@@ -977,7 +985,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-05",
+      "id": "act-06",
       "type": "commit",
       "project": "sunward-catalog",
       "message": "feat: SUNWARD catalog SPA — 42 models, 3 categories, filters, search, product detail pages",
@@ -985,7 +993,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-06",
+      "id": "act-07",
       "type": "commit",
       "project": "sunward-catalog",
       "message": "init: catalog data (42 models)",
@@ -993,7 +1001,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-07",
+      "id": "act-08",
       "type": "docs",
       "project": "sunward-landing",
       "message": "docs: add README",
@@ -1001,7 +1009,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-08",
+      "id": "act-09",
       "type": "commit",
       "project": "sunward-landing",
       "message": "feat: SUNWARD landing page - modern premium design",
@@ -1009,7 +1017,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-09",
+      "id": "act-10",
       "type": "commit",
       "project": "sunward-landing",
       "message": "init",
@@ -1017,7 +1025,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-10",
+      "id": "act-11",
       "type": "commit",
       "project": "mobile-games",
       "message": "chore: move APKs to GitHub release (too large for git)",
@@ -1025,7 +1033,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-11",
+      "id": "act-12",
       "type": "commit",
       "project": "mobile-games",
       "message": "feat: 10 addictive mobile games built with Flutter",
@@ -1033,7 +1041,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-12",
+      "id": "act-13",
       "type": "commit",
       "project": "washatai",
       "message": "add: 10 Playwright E2E tests (all passing)",
@@ -1041,7 +1049,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-13",
+      "id": "act-14",
       "type": "fix",
       "project": "washatai",
       "message": "fix: add .gitignore, remove node_modules from tracking",
@@ -1049,21 +1057,13 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-14",
+      "id": "act-15",
       "type": "commit",
       "project": "washatai",
       "message": "add: Dockerfile for docker-compose deployment",
       "timestamp": "2026-03-25T22:10:31Z",
       "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-15",
-      "type": "commit",
-      "project": "washatai",
-      "message": "init: WasThatAI - AI text analyzer with gateway integration",
-      "timestamp": "2026-03-25T21:21:15Z",
-      "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-03-30T22:30:39Z"
+  "updated_at": "2026-03-30T23:00:38Z"
 }
