@@ -163,9 +163,9 @@
         }
       ],
       "last_commit": {
-        "message": "No server is currently available to service your request. Sorry about that. Please try resubmitting your request and contact us if the problem persists.",
-        "date": "null",
-        "author": "null\nunknown"
+        "message": "chore: move APKs to GitHub release (too large for git)",
+        "date": "2026-03-26T23:27:54Z",
+        "author": "Dream Team Bot"
       },
       "stats": {
         "files": 1284,
@@ -206,9 +206,9 @@
         }
       ],
       "last_commit": {
-        "message": "No server is currently available to service your request. Sorry about that. Please try resubmitting your request and contact us if the problem persists.",
-        "date": "null",
-        "author": "null\nunknown"
+        "message": "add: 10 Playwright E2E tests (all passing)",
+        "date": "2026-03-25T22:14:18Z",
+        "author": "Dream Team Bot"
       },
       "stats": {
         "files": 113,
@@ -335,9 +335,9 @@
         }
       ],
       "last_commit": {
-        "message": "No server is currently available to service your request. Sorry about that. Please try resubmitting your request and contact us if the problem persists.",
-        "date": "null",
-        "author": "null\nunknown"
+        "message": "merge: feature/main-app -> main (keep feature branch test files)",
+        "date": "2026-03-22T21:42:20Z",
+        "author": "Dream Team Bot"
       },
       "stats": {
         "files": 62,
@@ -1065,5 +1065,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-04-01T12:01:15Z"
+  "updated_at": "2026-04-01T12:30:46Z"
 }
