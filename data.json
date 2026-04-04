@@ -34,12 +34,12 @@
         }
       ],
       "last_commit": {
-        "message": "docs: add QA reports and code review; update Dockerfile",
-        "date": "2026-04-03T23:40:04Z",
-        "author": "Dream Team Bot"
+        "message": "Merge pull request #1 from vkrasnovid/claude/add-claude-documentation-F4v6P",
+        "date": "2026-04-04T21:24:58Z",
+        "author": "vkrasnovid"
       },
       "stats": {
-        "files": 250,
+        "files": 251,
         "loc": 12525
       }
     },
@@ -989,6 +989,22 @@
   "activity": [
     {
       "id": "act-01",
+      "type": "commit",
+      "project": "tolpa",
+      "message": "Merge pull request #1 from vkrasnovid/claude/add-claude-documentation-F4v6P",
+      "timestamp": "2026-04-04T21:24:58Z",
+      "author": "vkrasnovid"
+    },
+    {
+      "id": "act-02",
+      "type": "docs",
+      "project": "tolpa",
+      "message": "docs: add comprehensive CLAUDE.md for AI assistant onboarding",
+      "timestamp": "2026-04-04T21:23:16Z",
+      "author": "Claude"
+    },
+    {
+      "id": "act-03",
       "type": "docs",
       "project": "tolpa",
       "message": "docs: add QA reports and code review; update Dockerfile",
@@ -996,7 +1012,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-04",
       "type": "docs",
       "project": "tolpa",
       "message": "docs: comprehensive README with setup guide and architecture",
@@ -1004,27 +1020,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-05",
       "type": "fix",
       "project": "tolpa",
       "message": "fix: P0 security - auth on /test/run, timing-safe HMAC, persona count cap (max 100)",
       "timestamp": "2026-04-03T23:36:58Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-04",
-      "type": "fix",
-      "project": "tolpa",
-      "message": "fix: auth validation on test/create and test/list APIs",
-      "timestamp": "2026-04-03T23:34:27Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-05",
-      "type": "commit",
-      "project": "tolpa",
-      "message": "feat: TOLPA MVP - persona engine, telegram bot, web dashboard",
-      "timestamp": "2026-04-03T23:18:09Z",
       "author": "Dream Team Bot"
     },
     {
@@ -1108,5 +1108,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-04-04T00:30:38Z"
+  "updated_at": "2026-04-04T21:30:40Z"
 }
