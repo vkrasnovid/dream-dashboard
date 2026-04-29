@@ -34,12 +34,12 @@
         }
       ],
       "last_commit": {
-        "message": "Add CI/CD workflow (lint, test, docker build)",
-        "date": "2026-04-28T23:07:00Z",
+        "message": "hotfix-v3: CAST() syntax fix in 7 handlers + QA_REPORT.md update",
+        "date": "2026-04-29T08:37:55Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 83,
+        "files": 86,
         "loc": 3325
       }
     },
@@ -1034,12 +1034,28 @@
       "id": "act-01",
       "type": "commit",
       "project": "umnick",
+      "message": "hotfix-v3: CAST() syntax fix in 7 handlers + QA_REPORT.md update",
+      "timestamp": "2026-04-29T08:37:55Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "umnick",
+      "message": "Add README.md, API.md, CONTRIBUTING.md",
+      "timestamp": "2026-04-29T08:36:55Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
+      "type": "commit",
+      "project": "umnick",
       "message": "Add CI/CD workflow (lint, test, docker build)",
       "timestamp": "2026-04-28T23:07:00Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-04",
       "type": "commit",
       "project": "umnick",
       "message": "CI/CD workflow, DEPLOYMENT.md, fix seed data, final Docker config",
@@ -1047,27 +1063,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-05",
       "type": "commit",
       "project": "umnick",
       "message": "Fix plugins: add handler type to ToolDefinition",
       "timestamp": "2026-04-28T23:02:33Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-04",
-      "type": "commit",
-      "project": "umnick",
-      "message": "Fix Docker config: network names, ports, Celery app refs, lockfile, .dockerignore",
-      "timestamp": "2026-04-28T23:02:04Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-05",
-      "type": "commit",
-      "project": "umnick",
-      "message": "Initial commit: Умник MVP",
-      "timestamp": "2026-04-28T23:00:48Z",
       "author": "Dream Team Bot"
     },
     {
@@ -1151,5 +1151,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-04-29T00:30:36Z"
+  "updated_at": "2026-04-29T09:00:39Z"
 }
