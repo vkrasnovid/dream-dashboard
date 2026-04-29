@@ -34,13 +34,13 @@
         }
       ],
       "last_commit": {
-        "message": "hotfix-v3: base path fixes for images, OG image, and header-nav.js",
-        "date": "2026-04-29T16:48:22Z",
+        "message": "hotfix-v3: base path fixes + all P0/P1 from master (7e1ed0a)",
+        "date": "2026-04-29T16:55:48Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 74,
-        "loc": 100
+        "files": 117,
+        "loc": 1191400
       }
     },
     {
@@ -1077,12 +1077,20 @@
       "id": "act-01",
       "type": "commit",
       "project": "vegas-barbershop",
+      "message": "hotfix-v3: base path fixes + all P0/P1 from master (7e1ed0a)",
+      "timestamp": "2026-04-29T16:55:48Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "vegas-barbershop",
       "message": "hotfix-v3: base path fixes for images, OG image, and header-nav.js",
       "timestamp": "2026-04-29T16:48:22Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-03",
       "type": "commit",
       "project": "vegas-barbershop",
       "message": "hotfix-v2: P0+P1 fixes from code review (api/booking, real photos, base path, dead files, semantic HTML, sitemap)",
@@ -1090,7 +1098,7 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-04",
       "type": "commit",
       "project": "vegas-barbershop",
       "message": "Fix base path for GitHub Pages",
@@ -1098,19 +1106,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-04",
+      "id": "act-05",
       "type": "commit",
       "project": "vegas-barbershop",
       "message": "Remove failing workflow, deploy via gh-pages",
       "timestamp": "2026-04-29T16:09:51Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-05",
-      "type": "commit",
-      "project": "vegas-barbershop",
-      "message": "Add GitHub Pages deploy workflow",
-      "timestamp": "2026-04-29T16:08:00Z",
       "author": "Dream Team Bot"
     },
     {
@@ -1194,5 +1194,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-04-29T17:00:40Z"
+  "updated_at": "2026-04-29T17:30:40Z"
 }
