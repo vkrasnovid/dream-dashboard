@@ -34,12 +34,12 @@
         }
       ],
       "last_commit": {
-        "message": "Remove deprecated version field from docker-compose.yml",
-        "date": "2026-04-30T22:34:16Z",
+        "message": "Fix admin Dockerfile (remove public dir copy), add shared to gateway Dockerfile, update DEPLOYMENT.md",
+        "date": "2026-05-01T08:23:28Z",
         "author": "Dream Team Bot"
       },
       "stats": {
-        "files": 188,
+        "files": 194,
         "loc": 10000
       }
     },
@@ -1120,12 +1120,28 @@
       "id": "act-01",
       "type": "commit",
       "project": "allo",
+      "message": "Fix admin Dockerfile (remove public dir copy), add shared to gateway Dockerfile, update DEPLOYMENT.md",
+      "timestamp": "2026-05-01T08:23:28Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-02",
+      "type": "commit",
+      "project": "allo",
+      "message": "Fix Dockerfiles, add deploy workflow, add admin standalone output",
+      "timestamp": "2026-05-01T08:17:28Z",
+      "author": "Dream Team Bot"
+    },
+    {
+      "id": "act-03",
+      "type": "commit",
+      "project": "allo",
       "message": "Remove deprecated version field from docker-compose.yml",
       "timestamp": "2026-04-30T22:34:16Z",
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-02",
+      "id": "act-04",
       "type": "commit",
       "project": "allo",
       "message": "Add DEPLOYMENT.md with deploy instructions",
@@ -1133,27 +1149,11 @@
       "author": "Dream Team Bot"
     },
     {
-      "id": "act-03",
+      "id": "act-05",
       "type": "commit",
       "project": "allo",
       "message": "Fix Dockerfiles and deploy configuration",
       "timestamp": "2026-04-30T22:33:50Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-04",
-      "type": "commit",
-      "project": "allo",
-      "message": "Fix docker-compose.yml and admin Dockerfile",
-      "timestamp": "2026-04-30T22:29:03Z",
-      "author": "Dream Team Bot"
-    },
-    {
-      "id": "act-05",
-      "type": "commit",
-      "project": "allo",
-      "message": "Initial commit: Алло Voice AI Secretary",
-      "timestamp": "2026-04-30T22:27:02Z",
       "author": "Dream Team Bot"
     },
     {
@@ -1237,5 +1237,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-04-30T23:30:40Z"
+  "updated_at": "2026-05-01T08:30:39Z"
 }
