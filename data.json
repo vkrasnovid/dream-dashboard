@@ -937,9 +937,9 @@
         }
       ],
       "last_commit": {
-        "message": "no commits",
-        "date": "",
-        "author": "unknown"
+        "message": "fix: enable core library desugaring for flutter_local_notifications",
+        "date": "2026-03-20T14:33:13Z",
+        "author": "Dream Team Bot"
       },
       "stats": {
         "files": 212,
@@ -980,9 +980,9 @@
         }
       ],
       "last_commit": {
-        "message": "No server is currently available to service your request. Sorry about that. Please try resubmitting your request and contact us if the problem persists.",
-        "date": "null",
-        "author": "null\nunknown"
+        "message": "Initial commit",
+        "date": "2020-02-24T17:17:29Z",
+        "author": "Sallfet"
       },
       "stats": {
         "files": 28,
@@ -1237,5 +1237,5 @@
       "author": "Dream Team Bot"
     }
   ],
-  "updated_at": "2026-05-06T14:01:32Z"
+  "updated_at": "2026-05-06T14:30:45Z"
 }
